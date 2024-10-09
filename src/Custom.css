@@ -1,0 +1,26 @@
+/* Page.css */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Custom class for animated heading */
+.animation-bounce {
+  animation: bounce 2s infinite;
+}
+
+.animation-fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
