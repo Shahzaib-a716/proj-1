@@ -23,7 +23,7 @@ const FlagDisplay = ({ onSelect }) => {
     { code: 'sl', name: 'Slovenian' },
     { code: 'sk', name: 'Slovak' },
     { code: 'sv', name: 'Swedish' },
-    { code: 'no', name: 'Norwegian' },
+    { code: 'no', name: 'Netherland' },
   ];
 
   const handleFlagClick = (flag) => {
@@ -40,12 +40,7 @@ const FlagDisplay = ({ onSelect }) => {
           <div className="mt-16 mb-20 mx-6 grid grid-cols-3 md:grid-cols-6 gap-10 md:gap-14 justify-center">
             {flags.map((flag, index) => (
               <div key={index} className="rounded-2xl">
-                <div
-                  className="tooltip-container relative"
-                  onMouseEnter={() => setTooltip(flag.name)}
-                  onMouseLeave={() => setTooltip('')}
-                  onClick={() => handleFlagClick(flag)}
-                >
+                
                   <img
                     src={`/assets/images/flags/${flag.code}.webp`}
                     alt={`Flag of ${flag.name}`}
@@ -57,7 +52,6 @@ const FlagDisplay = ({ onSelect }) => {
                     </div>
                   )}
                 </div>
-              </div>
             ))}
           </div>
         </div>
