@@ -1,13 +1,15 @@
 import React from 'react';
 
-const VirtualHouse = () => {
+const VirtualHouse2 = () => {
   return (
-    <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover">
+    <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover"
+    style={{ backgroundImage: 'url(/assets/images/day.jpg)' }}
+    >
       <div className="relative">
         <div className="grid md:grid-cols-2 gap-0 text-center">
           {/* Left Section */}
           <div className="flex bg-orange-500 items-center">
-            <img className="w-20 rounded-full" src="/img/new/back.png" alt="Back" />
+            <img className="w-20 rounded-full" src="/assets/images/back.png" alt="Back" />
             <div className="w-full">
               <h1 className="font-extrabold text-xl md:text-3xl">JUST LOOK AROUND</h1>
               <h1 className="m-0 pl-1 pr-1 text-white text-lg md:text-lg">
@@ -53,10 +55,10 @@ const VirtualHouse = () => {
               </span>
               <div className="flex justify-center flex-col items-center">
                 <div className="flex justify-between w-full -mb-20 mt-2">
-                  <img className="w-32 rotate-[35deg]" src="/img/lpg/arrow.gif" alt="Arrow" />
-                  <img className="w-32 rotate-[135deg]" src="/img/lpg/arrow.gif" alt="Arrow" />
+                  <img className="w-32 rotate-[35deg]" src="/assets/images/arrow.gif" alt="Arrow" />
+                  <img className="w-32 rotate-[135deg]" src="/assets/images/arrow.gif" alt="Arrow" />
                 </div>
-                <img className="w-70" src="/img/lpg/vh.png" alt="VirtualHouse" />
+                <img className="w-70" src="/assets/images/vh.png" alt="VirtualHouse" />
               </div>
             </a>
           </div>
@@ -71,4 +73,4 @@ const VirtualHouse = () => {
   );
 };
 
-export default VirtualHouse;
+export default VirtualHouse2;

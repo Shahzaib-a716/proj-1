@@ -9,6 +9,7 @@ import Registration2 from './Components/Registration2'; // Import Registration c
 import RegistrationForm31 from './Components/RegistrationForm31';
 import EmailNotRecognized from './Components/EmailNotRecognized';
 import SavedEmail from './Components/SavedEmail';
+import Virtual2 from './Components/Virtual2';
 
 
 
@@ -27,6 +28,8 @@ function App() {
           {/* Email Not Recognized page */}
           <Route path="/" element={<EmailNotRecognized />} />
           <Route path="/" element={<SavedEmail />} />
+          <Route path="/Virtual2" element={<Virtual2/>} />
+
    </Routes>
     </Router> 
      );
