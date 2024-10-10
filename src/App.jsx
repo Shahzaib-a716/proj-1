@@ -18,15 +18,15 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} /> {/* Main page */}
-        <Route path="/home" element={<Home />} /> {/* Navigating to Home component */}
+        <Route path="/Home" element={<Home />} /> {/* Navigating to Home component */}
         <Route path="/FreeRegistration1" element={<FreeRegistration1 />} />
         <Route path="/Flag1" element={<Flag1 />}/>
         <Route path="/LookAround" element={<LookAround />}/> {/* Add FreeRegistration route */}
         <Route path="/Registration2" element={<Registration2 />} /> {/* Add Registration route */}
         <Route path="/RegistrationForm31" element={<RegistrationForm31 />} /> 
           {/* Email Not Recognized page */}
-          <Route path="/EmailNotRecognized" element={<EmailNotRecognized />} />
-          <Route path="/SavedEmail" element={<SavedEmail />} />
+          <Route path="/" element={<EmailNotRecognized />} />
+          <Route path="/" element={<SavedEmail />} />
    </Routes>
     </Router> 
      );
