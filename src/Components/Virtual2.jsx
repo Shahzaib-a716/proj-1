@@ -1,29 +1,49 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const VirtualHouse2 = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+
   return (
-    <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover"
-    style={{ backgroundImage: 'url(/assets/images/day.jpg)' }}
+    <div
+      className="min-h-screen bg-day bg-no-repeat bg-center bg-cover"
+      style={{ backgroundImage: 'url(/assets/images/day.jpg)' }}
     >
       <div className="relative">
         <div className="grid md:grid-cols-2 gap-0 text-center">
           {/* Left Section */}
           <div className="flex bg-orange-500 items-center">
-            <img className="w-20 rounded-full" src="/assets/images/back.png" alt="Back" />
+            <div className="relative group">
+              <img
+                className="w-20 rounded-full cursor-pointer"
+                src="/assets/images/button back.webp"
+                alt="Back"
+                onClick={handleBackClick}
+              />
+              {/* Tooltip */}
+              <div className="absolute left-0 right-20 top-[-20px] bg-black text-white text-lg p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 w-40">
+                Go Back
+              </div>
+            </div>
+
             <div className="w-full">
               <h1 className="font-extrabold text-xl md:text-3xl">JUST LOOK AROUND</h1>
               <h1 className="m-0 pl-1 pr-1 text-white text-lg md:text-lg">
                 IF YOU DO NOT SEE YOUR AREA, THEN{' '}
                 <a
                   className="font-bold text-yellow-300 text-base md:text-xl cursor-pointer"
-                  href="https://hm.ez123.eu/ContactUs"
+                  href="/ContactUs"
                 >
                   CLICK HERE
                 </a>
               </h1>
             </div>
           </div>
-          
+
           {/* Right Section */}
           <div className="bg-blue-500 p-4">
             <h1 className="text-white text-lg md:text-xl m-0 p-0">
@@ -31,18 +51,33 @@ const VirtualHouse2 = () => {
             </h1>
             <div className="ml-5 mr-5 grid grid-cols-3 gap-4 mt-4">
               <div className="w-full p-0.5 bg-yellow-200 rounded-xl">
-                <div className="bg-red-400 rounded-xl p-1 text-center text-xs font-medium leading-none text-primary-100" style={{ width: '60%' }}>5-64%</div>
+                <div
+                  className="bg-red-400 rounded-xl p-1 text-center text-xs font-medium leading-none text-primary-100"
+                  style={{ width: '60%' }}
+                >
+                  5-64%
+                </div>
               </div>
               <div className="w-full p-0.5 bg-yellow-200 rounded-xl">
-                <div className="bg-orange-400 rounded-xl p-1 text-center text-xs font-medium leading-none text-primary-100" style={{ width: '74%' }}>65-74%</div>
+                <div
+                  className="bg-orange-400 rounded-xl p-1 text-center text-xs font-medium leading-none text-primary-100"
+                  style={{ width: '74%' }}
+                >
+                  65-74%
+                </div>
               </div>
               <div className="w-full p-0.5 bg-yellow-200 rounded-xl">
-                <div className="bg-green-400 rounded-xl p-1 text-center text-xs font-medium leading-none text-primary-100" style={{ width: '80%' }}>75-100%</div>
+                <div
+                  className="bg-green-400 rounded-xl p-1 text-center text-xs font-medium leading-none text-primary-100"
+                  style={{ width: '80%' }}
+                >
+                  75-100%
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         {/* CTA Section */}
         <div className="mt-1 flex justify-center">
           <div>
@@ -66,7 +101,13 @@ const VirtualHouse2 = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="text-center pt-1 w-full text-xl text-white font-bold" style={{ textShadow: 'rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 0px -1px 0px, rgb(0, 0, 0) 0px 1px 0px, rgb(0, 0, 0) -1px 0px 0px' }}>
+      <div
+        className="text-center pt-1 w-full text-xl text-white font-bold"
+        style={{
+          textShadow:
+            'rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 0px -1px 0px, rgb(0, 0, 0) 0px 1px 0px, rgb(0, 0, 0) -1px 0px 0px',
+        }}
+      >
         All Rights reserved • Service Hub by Total Mizers Ltd. Toronto, Ontario CANADA (416) 333.FAST (3278) Copyright © 2016 - 2024, Les The Handyman.
       </div>
     </div>

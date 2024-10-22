@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MyComponent = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
+
   return (
-    <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover">
+    <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'url("/assets/images/day.jpg")' }}>
       <div className="flex flex-col md:p-4 w-full h-full items-center">
         <div className="bg-white p-1 md:p-2 text-2xl md:text-3xl text-center md:rounded-xl border-2 border-gray-700">
           <div className="flex justify-center">
@@ -50,17 +57,20 @@ const MyComponent = () => {
                 alt="Play Video"
               />
             </div>
-            <div className="tooltip-container transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300">
+            <div
+              className="tooltip-container transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300 cursor-pointer"
+              onClick={handleBackClick}
+            >
               <img
                 className="w-20 rounded-full"
-                src="/assets/images/back.jpg"
+                src="/assets/images/button back.webp"
                 alt="Back"
               />
             </div>
             <div className="tooltip-container transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300">
               <img
                 className="w-16 rounded-full"
-                src="/assets/images/qmark.jpg"
+                src="/assets/images/button help.webp"
                 alt="Question Mark"
               />
             </div>

@@ -23,6 +23,10 @@ const RegistrationForm31 = () => {
   const handleBackClick = () => {
     navigate(-1); // Go back to the previous page
   };
+  const handleOkClick = () => {
+    navigate('/VBEnd'); // Navigate to the Custom page
+  };
+
 
   return (
     <div
@@ -32,12 +36,12 @@ const RegistrationForm31 = () => {
       <div className="relative">
         <div className="grid md:grid-cols-2 gap-0 text-center">
           <div className="flex bg-orange-500 items-center">
-            <img className="w-20 rounded-full cursor-pointer" src="/assets/images/back.png" alt="Back" onClick={handleBackClick} />
+            <img className="w-20 rounded-full cursor-pointer" src="/assets/images/button back.webp" alt="Back" onClick={handleBackClick} />
             <div className="w-full">
               <h1 className="font-bold text-xl md:text-2xl">FREE BUSINESS REGISTRATION</h1>
               <h1 className="m-0 pl-1 pr-1 text-white text-sm md:text-base">
                 IF YOU DO NOT SEE YOUR AREA, THEN{' '}
-                <a className="font-bold text-yellow-300 text-base md:text-xl cursor-pointer" href="https://hm.ez123.eu/ContactUs">
+                <a className="font-bold text-yellow-300 text-base md:text-xl cursor-pointer" href="/ContactUs">
                   CLICK HERE
                 </a>
               </h1>
@@ -78,7 +82,7 @@ const RegistrationForm31 = () => {
                 value={country || ''} // Use state to fill country
                 placeholder="Country"
                 style={{ fontSize: '1.5rem' }} 
-                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black placeholder:font-bold placeholder:text-3xl"
+                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black font-extrabold text-center placeholder:font-extrabold placeholder:text-5xl"
                 readOnly // Make it read-only if you want to prevent changes
               />
               <span className="absolute hidden group-hover:flex mt-3 group-hover:items-center -top-2 left-full w-full px-6 py-6 bg-yellow-500 rounded-3xl text-center font-extrabold text-black !text-3xl">
@@ -94,7 +98,7 @@ const RegistrationForm31 = () => {
                 value={province || ''} // Use state to fill province
                 placeholder="Province or State"
                 style={{ fontSize: '1.5rem' }} 
-                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black placeholder:font-bold placeholder:text-3xl"
+                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black font-extrabold text-center placeholder:font-extrabold placeholder:text-5xl"
                 readOnly // Make it read-only if you want to prevent changes
               />
               <span className="absolute hidden group-hover:flex mt-3 group-hover:items-center -top-2 left-full w-full px-6 py-6 bg-yellow-500 rounded-3xl text-center font-extrabold text-black !text-3xl">
@@ -110,7 +114,7 @@ const RegistrationForm31 = () => {
                 value={city || ''} // Use state to fill city
                 placeholder="City"
                 style={{ fontSize: '1.5rem' }} 
-                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black placeholder:font-bold placeholder:text-3xl"
+                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black font-extrabold text-center placeholder:font-extrabold placeholder:text-5xl"
                 readOnly // Make it read-only if you want to prevent changes
               />
               <span className="absolute hidden group-hover:flex mt-3 group-hover:items-center -top-2 left-full w-full px-6 py-6 bg-yellow-500 rounded-3xl text-center font-extrabold text-black !text-3xl">
@@ -133,7 +137,7 @@ const RegistrationForm31 = () => {
                 }}
                 placeholder="Your Service"
                 style={{ fontSize: '1.5rem' }} 
-                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black placeholder:font-bold placeholder:text-3xl"
+                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black font-extrabold text-center placeholder:font-extrabold placeholder:text-3xl"
               />
               <span className="absolute hidden group-hover:flex mt-3 group-hover:items-center -top-2 left-full w-full px-6 py-6 bg-yellow-500 rounded-3xl text-center font-extrabold text-black !text-3xl">
                 Enter the service you offer
@@ -146,7 +150,7 @@ const RegistrationForm31 = () => {
                 type="text"
                 placeholder="Username"
                 style={{ fontSize: '1.5rem' }} 
-                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border-x-4 border-y-4 border-yellow-500  placeholder-black placeholder:font-bold placeholder:text-3xl"
+                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black font-extrabold text-center placeholder:font-extrabold placeholder:text-3xl"
               />
               <span className="absolute hidden group-hover:flex mt-3 group-hover:items-center -top-2 left-full w-full px-6 py-6 bg-yellow-500 rounded-3xl text-center font-extrabold text-black !text-3xl">
                 Enter your username
@@ -159,7 +163,7 @@ const RegistrationForm31 = () => {
                 type="password"
                 placeholder="PIN Code"
                 style={{ fontSize: '1.5rem' }} 
-                className="flex-1 p-6 rounded-3xl bg-white bg-opacity-[0.2] border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black placeholder:font-bold placeholder:text-3xl"
+                className="flex-1 p-6 pl-6 rounded-3xl bg-white bg-opacity-[0.2] border border-x-4 border-y-4 border-yellow-500 focus:outline-none placeholder-black font-extrabold text-center placeholder:font-extrabold placeholder:text-3xl"
               />
               <span className="absolute hidden group-hover:flex mt-3 group-hover:items-center -top-2 left-full w-full px-8 py-6 bg-yellow-500 rounded-3xl  text-center font-extrabold text-black !text-3xl">
                 Enter your PIN code
@@ -186,9 +190,15 @@ const RegistrationForm31 = () => {
 
             {/* Submit Buttons */}
             <div className="flex justify-between items-center mt-6">
-              <img src="/assets/images/back.png" alt="Back" className="w-21 h-20 cursor-pointer" onClick={handleBackClick} />
-              <img src="/assets/images/ok.png" alt="OK" className="w-21 h-20 cursor-pointer" />
-              <img src="/assets/images/reject.png" alt="Reject" className="w-21 h-20 cursor-pointer" />
+              <img src="/assets/images/button back.webp" alt="Back" className="w-21 h-20 cursor-pointer" onClick={handleBackClick} />
+              <img
+        src="/assets/images/button ok check.webp"
+        alt="OK"
+        className="w-21 h-20 cursor-pointer"
+        onClick={handleOkClick}
+      />
+
+              <img src="/assets/images/button cancel no.webp" alt="Reject" className="w-21 h-20 cursor-pointer" />
             </div>
           </form>
         </div>

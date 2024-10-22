@@ -1,7 +1,9 @@
 import React from 'react';
 
+
 const SavedEmailComponent = () => {
   return  (
+
     <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'url("/assets/images/day.jpg")' }}>
     <div className="flex flex-col gap-6 justify-center items-center min-h-screen">
       <div className="flex border-s-white border-8 bg-yellow-500 p-4 rounded-2xl flex-col gap-6 justify-center items-center">

@@ -27,13 +27,13 @@ const Registration2 = () => {
       <div className="relative">
         <div className="grid md:grid-cols-2 gap-0 text-center">
           <div className="flex bg-orange-500 items-center">
-            <img className="w-20 rounded-full cursor-pointer" src="/assets/images/back.png" alt="Back" onClick={handleBackClick} />
+            <img className="w-20 rounded-full cursor-pointer" src="/assets/images/button back.webp" alt="Back" onClick={handleBackClick} />
             
             <div className="w-full">
               <h1 className="font-bold text-xl md:text-2xl">FREE BUSINESS REGISTRATION</h1>
               <h1 className="m-0 pl-1 pr-1 text-white text-sm md:text-base">
                 IF YOU DO NOT SEE YOUR AREA, THEN{' '}
-                <a className="font-bold text-yellow-300 text-base md:text-xl cursor-pointer" href="https://hm.ez123.eu/ContactUs">
+                <a className="font-bold text-yellow-300 text-base md:text-xl cursor-pointer" href="/ContactUs">
                   CLICK HERE
                 </a>
               </h1>

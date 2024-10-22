@@ -33,14 +33,7 @@ const Page = () => {
                     <div className=" inset-0 flex mt-10 justify-center items-center">
                       {/* Video Embed */}
                       <div className="w-full max-w-3xl">
-                        <iframe
-                          title="EZ123.EU"
-                          src="https://www.youtube.com/embed/X6uc0sFfYMU?feature=oembed"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerPolicy="strict-origin-when-cross-origin"
-                          allowFullScreen
-                          className="w-full h-80" // Increased height for the video
-                        ></iframe>
+                      
                       </div>
                     </div>
                   </div>

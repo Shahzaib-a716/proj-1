@@ -154,7 +154,7 @@ const FreeRegistration = () => {
           <div className="flex bg-orange-500 items-center">
             <img
               className="w-20 rounded-full cursor-pointer"
-              src="/assets/images/back.png"
+              src="/assets/images/button back.webp"
               alt="Back"
               onClick={handleBackClick}
             />

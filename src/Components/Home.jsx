@@ -78,7 +78,7 @@ function Home() {
 
           <a
             className="flex md:w-1/3 -mt-28 md:-mt-60 flex-col justify-center items-center hover:-translate-y-1 hover:scale-105 duration-300"
-            href=""
+            href="/Proof"
           >
             <div className="tooltip-container">
               <img src="/assets/images/les.webp" alt="LesTheHandyman" />

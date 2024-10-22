@@ -107,6 +107,8 @@ const LookAround = () => {
       setSelectedProvince(null); // Go back to province selection
     } else if (selectedCountry) {
       setSelectedCountry(null); // Go back to country selection
+    }else {
+      navigate(-1); // Navigate to the previous page
     }
   };
 
@@ -145,7 +147,7 @@ const LookAround = () => {
           <div className="flex bg-orange-500 items-center">
             <img
               className="w-20 rounded-full cursor-pointer"
-              src="/assets/images/back.png"
+              src="/assets/images/button back.webp"
               alt="Back"
               onClick={handleBackClick}
             />
@@ -155,7 +157,7 @@ const LookAround = () => {
                 IF YOU DO NOT SEE YOUR AREA, THEN{' '}
                 <a
                   className="font-bold text-yellow-300 text-base md:text-xl cursor-pointer"
-                  href="https://hm.ez123.eu/ContactUs"
+                  href="/ContactUs"
                 >
                   CLICK HERE
                 </a>
