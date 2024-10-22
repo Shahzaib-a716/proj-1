@@ -35,7 +35,7 @@ const SavedEmailComponent = () => {
   
         {/* CTA Section with Tooltips */}
         <div className="flex gap-10 justify-around items-center">
-          <a className="w-24 md:w-32" href="https://hm.ez123.eu/JustLookArround">
+          <a className="w-24 md:w-32" href="/LookArround">
             <div className="relative group">
               <img className="hover:-translate-y-1 hover:scale-110 duration-300" src="/assets/images/eyeballs.gif" alt="Eyeballs" />
               <span className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 whitespace-nowrap bg-black text-white text-lg rounded-md px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -47,7 +47,7 @@ const SavedEmailComponent = () => {
   
           <img src="/assets/images/smile.png" className="w-24 md:w-40 rounded-full" alt="Like Smile Emoji" title="We're Happy" />
   
-          <a className="w-24 md:w-32" href="https://hm.ez123.eu/RegisterYourBusiness">
+          <a className="w-24 md:w-32" href="/FreeRegistration1">
             <div className="relative group">
               <img className="hover:-translate-y-1 hover:scale-110 duration-300" src="/assets/images/clipboard.webp" alt="Clipboard" />
               <span className="absolute left-full ml-3 top-1/2 transform -translate-y-1/2 whitespace-nowrap bg-black text-white text-lg rounded-md px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
