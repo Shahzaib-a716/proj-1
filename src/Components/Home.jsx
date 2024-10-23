@@ -1,30 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 function Home() {
+  const { t } = useTranslation(); // Initialize translation hook
   const [email, setEmail] = useState('');
-  const navigate = useNavigate(); // useNavigate replaces useHistory
+  const [selectedLanguage, setSelectedLanguage] = useState('English');
+  const [selectedFlag, setSelectedFlag] = useState('/assets/images/en.png');
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // Scroll down to the middle of the page when the component loads
   useEffect(() => {
-    const scrollToMiddle = () => {
-      // Calculate the middle of the document and scroll there
-      const middleOfPage = document.documentElement.scrollHeight / 2;
-      window.scrollTo({
-        top: middleOfPage,
-        behavior: 'smooth',
-      });
-    };
+    // If location.state contains flag data, update the state accordingly
+    if (location.state) {
+      const { selectedLanguage, selectedFlag } = location.state;
+      setSelectedLanguage(selectedLanguage);
+      setSelectedFlag(selectedFlag);
+    }
+  }, [location.state]);
 
-    // Trigger the scroll as soon as the component mounts
-    scrollToMiddle();
-  }, []);
-
-  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form behavior (page refresh)
-
-    // Only navigate if an email is entered
+    e.preventDefault();
     if (email.trim()) {
       console.log('Navigating to EmailNotRecognized page');
       navigate('/EmailNotRecognized', { state: { email } });
@@ -34,7 +30,10 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'url("/assets/images/day.jpg")' }}>
+    <div
+      className="min-h-screen bg-day bg-no-repeat bg-center bg-cover"
+      style={{ backgroundImage: 'url("/assets/images/day.jpg")' }}
+    >
       <div className="flex flex-col gap-4 md:gap-3 justify-center items-center text-center">
         <h1
           className="text-2xl text-white mt-4 mb-3 md:text-4xl font-extrabold w-full"
@@ -43,7 +42,7 @@ function Home() {
             fontFamily: '"Exo 2", Helvetica, Arial, Lucida, sans-serif',
           }}
         >
-          I am living proof: if you are organized &amp; you have my system, you can accomplish almost anything! Click on me to see the proof!
+          {t('welcomeMessage')} {/* Use translation for welcome message */}
         </h1>
 
         <div className="flex flex-col w-full justify-center items-center relative">
@@ -53,28 +52,34 @@ function Home() {
                 <img
                   className="w-24 md:w-32 hover:-translate-y-1 hover:scale-110 duration-300"
                   src="/assets/images/eyeballs.gif"
-                  alt="Eyeballs"
+                  alt={t('lookAround')} // Use translation for alt text
                 />
               </div>
             </a>
+
+            {/* Updated Flag Icon */}
             <a href="/Flag1">
-              <div className="w-16 md:w-24 cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300 tooltip-container">
-                <img src="/assets/images/en.png" className="rounded-xl" alt="Language Icon" />
+              <div className="w-16 md:w-36 cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300 tooltip-container">
+                <img src={selectedFlag} className="rounded-xl" alt={selectedLanguage} />
               </div>
             </a>
 
             <a href="/FreeRegistration1">
               <div className="tooltip-container">
                 <img
-                  className=" w-24 md:w-32 hover:-translate-y-1 hover:scale-110 duration-300"
+                  className="w-24 md:w-32 hover:-translate-y-1 hover:scale-110 duration-300"
                   src="/assets/images/clipboard.webp"
-                  alt="Clipboard"
+                  alt={t('registration')} // Use translation for alt text
                 />
               </div>
             </a>
           </div>
 
-          <img className="md:w-4/6" src="/assets/images/newlanding2.webp" alt="Landing Banner" />
+          <img
+            className="md:w-4/6"
+            src="/assets/images/newlanding2.webp"
+            alt={t('landingBanner')} // Use translation for alt text
+          />
 
           <a
             className="flex md:w-1/3 -mt-28 md:-mt-60 flex-col justify-center items-center hover:-translate-y-1 hover:scale-105 duration-300"
@@ -88,7 +93,6 @@ function Home() {
 
         {/* Input Field */}
         <div className="overflow-hidden flex flex-col md:gap-6 items-center">
-          {/* Add the form submit handler here */}
           <form className="rounded-3xl" onSubmit={handleSubmit}>
             <div className="flex justify-center mb-2 items-center gap-2 border-6 border-yellow-500 bg-yellow-500 rounded-3xl">
               <input
@@ -104,15 +108,18 @@ function Home() {
                 autoFocus
               />
             </div>
-            {/* Hidden submit button to allow form submission on "Enter" press */}
             <button type="submit" style={{ display: 'none' }}></button>
           </form>
         </div>
       </div>
 
-      {/* Footer Section */}
-      <div className="text-center pt-1 w-full text-xl text-white font-bold" style={{ textShadow: 'rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 0px -1px 0px, rgb(0, 0, 0) 0px 1px 0px, rgb(0, 0, 0) -1px 0px 0px' }}>
-        All Rights reserved • Service Hub by Total Mizers Ltd. Toronto, Ontario CANADA (416) 333.FAST (3278) Copyright © 2016 - 2024, Les The Handyman.
+      <div
+        className="text-center pt-1 w-full text-xl text-white font-bold"
+        style={{
+          textShadow: 'rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 0px -1px 0px, rgb(0, 0, 0) 0px 1px 0px, rgb(0, 0, 0) -1px 0px 0px',
+        }}
+      >
+        {t('footerText')} {/* Use translation for footer text */}
       </div>
     </div>
   );

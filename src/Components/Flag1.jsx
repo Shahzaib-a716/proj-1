@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
-const FlagDisplay = ({ onSelect }) => {
-  const [tooltip, setTooltip] = useState('');
-
+const FlagDisplay = () => {
+  const { t, i18n } = useTranslation(); // Initialize translation hook
+  const navigate = useNavigate();
   const flags = [
     { code: 'en', name: 'English' },
     { code: 'de', name: 'German' },
@@ -23,37 +25,38 @@ const FlagDisplay = ({ onSelect }) => {
     { code: 'sl', name: 'Slovenian' },
     { code: 'sk', name: 'Slovak' },
     { code: 'sv', name: 'Swedish' },
-    { code: 'no', name: 'Netherland' },
+    { code: 'no', name: 'Norwegian' },
   ];
 
   const handleFlagClick = (flag) => {
-    onSelect(flag.name, `/assets/images/flags/${flag.code}.webp`);
+    // Change the language when the flag is clicked
+    i18n.changeLanguage(flag.code);
+
+    // Navigate to Home component and pass the selected flag data
+    navigate('/Home', {
+      state: {
+        selectedLanguage: flag.name,
+        selectedFlag: `/assets/images/flags/${flag.code}.webp`,
+      },
+    });
   };
 
   return (
-    <div
-      className="min-h-screen bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: 'url(/assets/images/day.jpg)' }}
-    >
-      <div className="min-h-screen bg-day bg-no-repeat bg-center bg-cover">
-        <div className="flex flex-col gap-4 md:gap-3 justify-center items-center text-center">
-          <div className="mt-16 mb-20 mx-6 grid grid-cols-3 md:grid-cols-6 gap-10 md:gap-14 justify-center">
-            {flags.map((flag, index) => (
-              <div key={index} className="rounded-2xl">
-                
-                  <img
-                    src={`/assets/images/flags/${flag.code}.webp`}
-                    alt={`Flag of ${flag.name}`}
-                    className="rounded-3xl transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300 w-32"
-                  />
-                  {tooltip === flag.name && (
-                    <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 w-max bg-yellow-500 text-black rounded-2xl font-bold p-4 text-center">
-                      {flag.name}
-                    </div>
-                  )}
-                </div>
-            ))}
-          </div>
+    <div className="min-h-screen bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'url(/assets/images/day.jpg)' }}>
+      <div className="flex flex-col gap-4 md:gap-3 justify-center items-center text-center">
+        <h1 className="text-3xl text-white font-bold mt-8 mb-4" style={{ textShadow: 'rgba(0, 0, 0, 0.4) 0.08em 0.08em 0.08em' }}>
+          {t('selectLanguage')} {/* Use translation for language selection title */}
+        </h1>
+        <div className="mt-16 mb-20 mx-6 grid grid-cols-3 md:grid-cols-6 gap-10 md:gap-14 justify-center">
+          {flags.map((flag, index) => (
+            <div key={index} className="rounded-2xl" onClick={() => handleFlagClick(flag)}>
+              <img
+                src={`/assets/images/flags/${flag.code}.webp`}
+                alt={`Flag of ${flag.name}`}
+                className="rounded-3xl transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300 w-32 cursor-pointer"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

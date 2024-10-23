@@ -13,6 +13,7 @@ import Virtual2 from './Components/Virtual2';
 import Proof from './Components/Proof';
 import ContactUs from './Components/ContactUs';
 import VBEnd from './Components/VBEnd';
+import i18n from './Components/i18n.jsx';
 
 
 
@@ -36,6 +37,9 @@ function App() {
           <Route path="/Proof" element={<Proof />}/>
           <Route path="/ContactUs" element={<ContactUs />}/>
           <Route path="/VBEnd" element={<VBEnd />}/>
+          <Route path="/i18n" element={<i18n />}/>
+
+
 
    </Routes>
     </Router> 
