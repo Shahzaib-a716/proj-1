@@ -44,7 +44,6 @@ const Page = () => {
                     <Link to="/Home"> 
                         <span className="block">START THE ADVENTURE</span>
                       </Link>
-                      <span className="text-black animation-fade-in text-6xl ">ClICK HERE</span> {/* Increased size */}
                     </h1>
                   </div>
 
