@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CustomLayout = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const navigate = useNavigate();
 
   // Update the time every second
   useEffect(() => {
@@ -44,10 +46,10 @@ const CustomLayout = () => {
       {/* Main Content Area */}
       <div className="relative bg-gray-500 p-4 border-4 border-gray-300">
         {/* Left Side Icons */}
-        <div className="absolute left-[-65px] top-[-20px] ">
-          <img src="/assets/images/button right blank.webp" alt="Icon 1" className="w-16 h-60" />
-          <img src="/assets/images/button right blank.webp" alt="Icon 2" className="w-16 h-52" />
-          <img src="/assets/images/button right blank.webp" alt="Icon 3" className="w-16 h-56" />
+        <div className="absolute left-[-65px] top-[-7px] ">
+          <img src="/assets/images/button left 1.webp" alt="Icon 1" className="w-16 h-52" />
+          <img src="/assets/images/button left 2.webp" alt="Icon 2" className="w-16 h-56" />
+          <img src="/assets/images/button left 3.webp" alt="Icon 3" className="w-16 h-56" />
           <img src="/assets/images/button virtual house back.webp" alt="Icon 3" className="w-17 h-16" />
         </div>
 
@@ -82,7 +84,9 @@ const CustomLayout = () => {
       {/* Bottom Icons */}
       <div className="grid grid-cols-8 gap-4 mt-5">
         {/* First row of icons */}
-        <img src="/assets/images/button bottom 1.webp" alt="Icon 9" className="w-17 h-16" />
+        <button onClick={() => navigate('/Callback')}>
+          <img src="/assets/images/button bottom 1.webp" alt="Icon 10" className="w-17 h-16" />
+        </button>
         <img src="/assets/images/button2.webp" alt="Icon 9" className="w-17 h-16" />
         <img src="/assets/images/button bottom 3.webp" alt="Icon 9" className="w-17 h-16" />
         <img src="/assets/images/button bottom 4.webp" alt="Icon 9" className="w-17 h-16" />
@@ -96,7 +100,9 @@ const CustomLayout = () => {
       <div className="grid grid-cols-8 gap-4 mt-3">
         {/* Second row of icons */}
         <img src="/assets/images/button bottom 9.webp" alt="Icon 9" className="w-17 h-16" />
-        <img src="/assets/images/button bottom 10.webp" alt="Icon 9" className="w-17 h-16" />
+        <button onClick={() => navigate('/Calculator')}>
+          <img src="/assets/images/button bottom 10.webp" alt="Icon 10" className="w-17 h-16" />
+        </button>
         <img src="/assets/images/button bottom 11.webp" alt="Icon 9" className="w-17 h-16" />
         <img src="/assets/images/button bottom 12.webp" alt="Icon 9" className="w-17 h-16" />
         <img src="/assets/images/button bottom 13.webp" alt="Icon 9" className="w-17 h-16" />

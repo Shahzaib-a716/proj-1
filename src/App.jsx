@@ -14,6 +14,8 @@ import Proof from './Components/Proof';
 import ContactUs from './Components/ContactUs';
 import VBEnd from './Components/VBEnd';
 import i18n from './Components/i18n.jsx';
+import Calculator from './Components/Calculator.jsx';
+import Callback from './Components/Callback.jsx';
 
 
 
@@ -38,6 +40,8 @@ function App() {
           <Route path="/ContactUs" element={<ContactUs />}/>
           <Route path="/VBEnd" element={<VBEnd />}/>
           <Route path="/i18n" element={<i18n />}/>
+          <Route path="/Calculator" element={<Calculator />}/>
+          <Route path="/Callback" element={<Callback />}/>
 
 
 
